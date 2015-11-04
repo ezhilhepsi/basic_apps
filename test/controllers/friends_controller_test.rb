@@ -35,7 +35,7 @@ class FriendsControllerTest < ActionController::TestCase
   end
 
   test "should update friend" do
-    patch :update, id: @friend, friend: { description: @friend.description, email: @friend.email, image: @friend.image, name: @friend.name, phone_no: @friend.phone_no }
+    patch :update, id: @friend, friend: { description: @friend.description, email: @friend.email, name: @friend.name, phone_no: @friend.phone_no }
     assert_redirected_to friend_path(assigns(:friend))
   end
 

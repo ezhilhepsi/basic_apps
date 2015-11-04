@@ -5,7 +5,6 @@ class CreateFriends < ActiveRecord::Migration
       t.string :email
       t.string :phone_no
       t.text :description
-      t.attachment :image
       t.timestamps null: false
     end
   end
