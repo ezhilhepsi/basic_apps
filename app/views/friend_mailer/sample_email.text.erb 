@@ -1,0 +1,2 @@
+Hi <%= @friend.name %>
+Sample mail sent using smtp.
