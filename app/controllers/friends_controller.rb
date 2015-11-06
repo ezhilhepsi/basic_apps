@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
-  before_action :set_friend, only: [:show, :edit, :update, :destroy]
+  before_action :set_friends, only: [:show, :edit, :update, :destroy]
 
   # GET /friends
   # GET /friends.json
@@ -14,7 +14,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/new
   def new
-    @friend = Friend.new
+    @friends = Friend.new
   end
 
   # GET /friends/1/edit
@@ -24,16 +24,16 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @friend = Friend.new(friend_params)
+    @friends = Friend.new(friends_params)
 
     respond_to do |format|
-      if @friend.save
-         FriendMailer.sample_email(@friend).deliver_later
-        format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
+      if @friends.save
+         FriendsMailer.sample_email(@friends).deliver_later
+        format.html { redirect_to @friends, notice: 'Friends was successfully created.' }
         format.json { render :show, status: :created, location: @friend }
       else
         format.html { render :new }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+        format.json { render json: @friends.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,12 +42,12 @@ class FriendsController < ApplicationController
   # PATCH/PUT /friends/1.json
   def update
     respond_to do |format|
-      if @friend.update(friend_params)
-        format.html { redirect_to @friend, notice: 'Friend was successfully updated.' }
+      if @friends.update(friends_params)
+        format.html { redirect_to @friends, notice: 'Friends was successfully updated.' }
         format.json { render :show, status: :ok, location: @friend }
       else
         format.html { render :edit }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+        format.json { render json: @friends.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,9 +55,9 @@ class FriendsController < ApplicationController
   # DELETE /friends/1
   # DELETE /friends/1.json
   def destroy
-    @friend.destroy
+    @friends.destroy
     respond_to do |format|
-      format.html { redirect_to friends_url, notice: 'Friend was successfully destroyed.' }
+      format.html { redirect_to frndz_url, notice: 'Friends was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,11 +65,11 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      @friend = Friend.find(params[:id])
+      @friend = Friends.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def friend_params
-      params.require(:friend).permit(:name, :email, :phone_no, :description)
+    def friends_params
+      params.require(:friends).permit(:name, :email, :phone_no, :description)
     end
 end

@@ -45,6 +45,8 @@ group :development do
   gem 'spring'
   gem 'devise'
   gem 'letter_opener'
+  gem 'paperclip'
+  gem 'bootstrap-sass'
+  gem 'aws-sdk', '< 2.0'
 end
-
-gem 'devise'
+# gem 'jazz_hands'
