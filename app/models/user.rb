@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   # Include default devise modules. Others available are:
       has_many :friend
-      attr_accessor :name, :email
 
- end
+end

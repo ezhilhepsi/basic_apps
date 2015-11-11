@@ -21,12 +21,8 @@ ActiveRecord::Schema.define(version: 20151029053118) do
     t.string   "email"
     t.string   "phone_no"
     t.text     "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,10 +41,6 @@ ActiveRecord::Schema.define(version: 20151029053118) do
     t.string   "name"
     t.string   "phone_no"
     t.text     "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
